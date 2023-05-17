@@ -32,7 +32,7 @@
         $royale->setPrix(13);
 
         // Côté Client
-        $calzone->setQuantite(1);
+      //  $calzone->setQuantite(1);
         // echo $calzone->Calcul();
     ?>
     <fieldset>
@@ -40,12 +40,15 @@
                
         <form action="" method="post">
         <select name="pizzaListe">
-            <option value="<?= $calzone->getNom(); ?>"><?= $calzone->getNom(); ?>: <?= $calzone->getPrix(); ?>€</option>
-            <option value="<?= $reine->getNom(); ?>"><?= $reine->getNom(); ?>: <?= $reine->getPrix(); ?>€</option>
-            <option value="<?= $royale->getNom(); ?>"><?= $royale->getNom(); ?>: <?= $royale->getPrix(); ?>€</option>
+            <option value="<?= $reine->getNom();?>"><?= $reine->getNom(); ?> Prix:<?= $reine->getPrix();?>€</option>
+
+            <option value="<?= $calzone->getNom(); ?>"><?= $calzone->getNom(); ?> Prix:<?= $calzone->getPrix()?>€</option>
+
+            <option value="<?= $royale->getNom(); ?>"><?= $royale->getNom(); ?> Prix:<?= $royale->getPrix()?>€</option>
         </select>
-        <input type="number" name="qt" placeholder="Quantité">
-        <input type="submit" name="commander" value="Commander">
+        
+        <p><input type="number" name="qt" placeholder="Quantité de Pizzas"></p> 
+        <p><input type="submit" name="commander" value="Commander"></p> 
     </form>
 
     <?php
@@ -53,12 +56,14 @@
             $quantite = $_POST['qt'];
             $pizza    = $_POST['pizzaListe'];
 
-            $$pizza->setQuantite($quantite);
+            $$pizza->setQuantite($quantite); //Pour récupérer la quantie de l'input:number
             $calcul = $$pizza->Calcul();
 
             if(is_numeric($quantite)) {
-                echo 'Le montant de votre commande sera de '.$calcul.' euros (emballage compris).';
+                echo 'Le montant de votre commande sera de '.$calcul.'€ (emballage compris).';
             }
+            echo'<br>';
+            var_dump ('Valeur de $$pizza: ',$$pizza->setQuantite($quantite));
         }
     ?>
 
