@@ -4,6 +4,7 @@
         private $prix;// variable d'objet
         private $quantite;// variable d'objet
         private static $emballage; // variable de classe
+        const  REMISE = 2;
 
         /**
          * Setters

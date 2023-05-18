@@ -5,22 +5,38 @@ class Produit2{
     public static $couleur ='noir'; //Variable  static de classe
     private static $warranty; //Variable de classe
     const REMISE = 2;
+    const TVA = 1.2;
 
-    public function __construct($nomProduit)
+    public function __construct($nomProduit,$prixProduit)
     {
-        echo 'Le produit: '.$nomProduit. 'a bien été crée';
-        $this->nom = $nomProduit ;
+        echo 'Le produit: '.$nomProduit. ' a bien été crée ';
+        $this->setNom($nomProduit); 
+        $this->setPrix($prixProduit);
+        echo 'Prix TTC: '.$this->AjouterTVA();
+       
         
     }
     /**Setters */
-    public function setNom($nomProduit){
+    private function setNom($nomProduit){
         $this->nom = $nomProduit;
     }
-    public function setPrix($prixProduit){
-        $this->prix = $prixProduit;
+    private function setPrix($prixProduit){
+        if(!is_numeric($prixProduit)){
+            echo 'Prix incorrect';
+        }else {
+            $this->prix = ABS($prixProduit);
+        } 
     }
     public static function setCouleur($couleurProduit){
         self::$couleur = $couleurProduit;
+    }
+    
+    public function exendedWarranty($warranty){
+       return  $this -> prix + self::getWarranty() - self::REMISE;
+    }
+
+    public function setWarranty($warranty){
+        self::$warranty;
     }
 
         /**Getters */
@@ -32,6 +48,14 @@ class Produit2{
     }
     public static function getCouleur(){
         return self::$couleur;
+    }
+    public function getWarranty(){
+        return self::$warranty;
+
+    }
+
+    private function AjouterTVA(){
+        return  $this ->getPrix() * self::TVA;
     }
 
 

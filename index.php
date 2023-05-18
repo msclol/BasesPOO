@@ -85,11 +85,12 @@ include './classes/Produit2.php'
             ?>
             <p class="lien-vers-pizza"><a href="AffichePizza.php">Vers la classe Pizza</a>  </p>
         </div>
+       
         <div class="container__main">
             <?php
-                $tablette = new Produit2('Tablette Lenovo');
+                $tablette = new Produit2('Tablette Lenovo',1000);
                 echo '<br>'; 
-                echo '<strong>'-'Produit: '.$tablette->getNom();
+                echo '<strong>'.'Produit:'.'</strong>'.$tablette->getNom().'<br>'.' Prix: '.$tablette->getPrix().'€';
 
             ?>
         </div>

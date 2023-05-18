@@ -36,12 +36,12 @@
         Choix de votre Pizza
     </legend>
     <h2>Pizza</h2>
-    <form action="" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
         <select name="pizzaList">
-            <option value="<?= $reine->getNom();?>"><?= $reine->getNom(); ?> Prix:<?= $reine->getPrix();?>€
+            <option value="<?= $reine->getNom();?>" ><?= $reine->getNom(); ?> Prix:<?= $reine->getPrix();?>€
             </option>
             
-            <option value="<?= $calzone->getNom(); ?>"><?= $calzone->getNom(); ?> Prix:<?= $calzone->getPrix()?>€
+            <option value="<?= $calzone->getNom(); ?>" selected><?= $calzone->getNom(); ?> Prix:<?= $calzone->getPrix()?>€
             </option>
             <option value="<?= $royale->getNom(); ?>"><?= $royale->getNom(); ?> Prix:<?= $royale->getPrix()?>€</option>
         </select>
