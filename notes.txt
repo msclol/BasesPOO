@@ -1,0 +1,7 @@
+Voiture est un véhicule
+Camion est un véhicule
+Moto est un véhicule
+
+Chien est un animal
+Lion est un animal 
+Lapin est un animal
