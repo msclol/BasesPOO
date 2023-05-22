@@ -1,0 +1,12 @@
+-Classe Mere:
+    Contiendra une méthode qui va additionner 02 nombres qu'on enverra en paramètre.
+    On va ranger le résultat de la méthode dans une propriété à qui on va donner une visibilité protected
+
+-Classe Fille:
+    Hérite de la classe Mere.
+    Contiendra une méthode qui va soustraire le résultat de l'addition qui aura été réalisé dans la classe mère.
+
+-ClasseSFille: 
+Hérite de la classe Fille.
+On va surcharger la méthode soustraire.
+On va surcharger la méthode additionner.
