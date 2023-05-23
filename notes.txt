@@ -1,7 +1,16 @@
-Voiture est un véhicule
-Camion est un véhicule
-Moto est un véhicule
+require --- require_once
+include --- include_once
 
-Chien est un animal
-Lion est un animal 
-Lapin est un animal
+include('A.php);
+include('B.php);
+include('C.php);
+
+
+spl_autoload_register(function($class){   //Mise en place de l'autoloader
+    include($class.'.php')
+
+});
+
+$instance1 = new A();
+$instance2 = new B();
+$instance3 = new C();
