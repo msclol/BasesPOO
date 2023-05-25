@@ -1,11 +1,9 @@
 <?php
- spl_autoload_register(function($class){   //Mise en place de l'autoloader
-        include_once($class.'php');
-
-    });
+include_once'Personne.php';
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-FR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,13 +11,20 @@
     <title>Personne</title>
 </head>
 <body>
-<?php
-    $personne1 = new Personne();
-    $personne1->setPrenom('Kouetos');
-    echo getPrenom($personne1);
 
-    
+<?php
+    $personne1 = new Personne('Jean',25);
+    echo $personne1->getPrenom();
+    echo ' ';
+
+    echo $personne1->getNom();
+
+   
+
+
 ?>
+    
+
     
 </body>
 </html>
