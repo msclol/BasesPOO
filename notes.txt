@@ -14,3 +14,10 @@ spl_autoload_register(function($class){   //Mise en place de l'autoloader
 $instance1 = new A();
 $instance2 = new B();
 $instance3 = new C();
+
+
+la méthode __call est liée aux méthodes d'objets et __callStatic aux variables de classe
+
+public static function __callStatic($methodeName, $arguments){
+    ........
+}

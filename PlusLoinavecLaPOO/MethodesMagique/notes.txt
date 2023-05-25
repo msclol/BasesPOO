@@ -1,0 +1,20 @@
+Les Méthodes magiques ne s'appellent pas
+
+public function __construct(){
+    ....
+}
+
+public function __call($methodeName, $argumentsDeLaMethode){
+    ....
+}
+
+public function __toString(){
+    ............
+}
+
+
+......................
+--Extérieur:
+
+$instance = new object();
+echo $instances;
