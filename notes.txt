@@ -11,6 +11,21 @@ spl_autoload_register(function($class){   //Mise en place de l'autoloader
 
 });
 
+<?php
+    spl_autoload_register(function($class){
+        include_once('classes/'.$class.'.php');
+    });
+
+?>
+
+spl_autoload_register(function($class){
+    $namespace = str_replace('\\','/',$class);
+    include($namespace.'.php');
+
+});
+
+ new classes\classe1\MaClasse1();
+
 $instance1 = new A();
 $instance2 = new B();
 $instance3 = new C();
@@ -21,3 +36,9 @@ la méthode __call est liée aux méthodes d'objets et __callStatic aux variable
 public static function __callStatic($methodeName, $arguments){
     ........
 }
+
+//Déclarer une namespace
+
+<?php
+
+?>

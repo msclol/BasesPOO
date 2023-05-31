@@ -1,6 +1,6 @@
 <?php
-        namespace std;
-        class Calculer{
+    namespace importee;
+    class Calculer{
         private $a;
         private $b;
 
@@ -28,9 +28,9 @@
         }
 
         public function Calculer(){
-            $calcul = $this->a + $this->b;
+            $calcul = $this->a - $this->b;
             return $calcul;
-        }
+         }
 
 
         
